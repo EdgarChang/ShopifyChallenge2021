@@ -1,0 +1,18 @@
+<div *ngIf="hero">
+
+  <h2>Movie Details</h2>
+  <div><span>Title: </span>{{hero.title}}</div>
+  <div><span>Release Year: </span>{{hero.year}}</div>
+  <button class="clear"
+          (click)="nominate(hero)">nominate</button>
+
+</div>
+
+<div>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <span class="badge">Year: {{hero.year}}</span> {{hero.title}}
+    </li>
+  </ul>
+
+</div>

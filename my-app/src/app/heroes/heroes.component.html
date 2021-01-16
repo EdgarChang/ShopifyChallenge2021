@@ -1,0 +1,17 @@
+<h2>My Heroes</h2>
+<div>
+    <label>name:
+      <input [(ngModel)]="searchTitle" placeholder="hahha"/>
+    </label>
+     <button class="clear"
+          (click)="clearHeroes();this.getHero(this.searchTitle)">search</button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <span class="badge">Year: {{hero.year}}</span> {{hero.title}}
+  </li>
+</ul>
+
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
