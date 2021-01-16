@@ -3,15 +3,17 @@
   <h2>Movie Details</h2>
   <div><span>Title: </span>{{hero.title}}</div>
   <div><span>Release Year: </span>{{hero.year}}</div>
-  <button class="clear"
-          (click)="nominate(hero)">nominate</button>
+  <button *ngIf="nominated(hero)" class="clear"
+          (click)="nominate(hero)" disabled>nominate</button>
+  <button *ngIf="!nominated(hero)" class="clear"
+  (click)="nominate(hero)">nominate</button>
 
 </div>
 
 <div>
   <ul class="movies">
     <li *ngFor="let hero of movies">
-      <span class="badge">Year: {{hero.year}}</span> {{hero.title}}
+      <span> {{hero.title}}({{hero.year}})</span>  <button (click)="remove(hero)">Remove</button>
     </li>
   </ul>
 
