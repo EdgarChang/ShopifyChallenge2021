@@ -22,10 +22,7 @@ export class HeroesComponent implements OnInit {
   searchTitle: string;
 
   selectedHero: Hero;
-  getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
-
+  
   getHero(title:string): void {
     this.heroService.getHero(title).subscribe(heroes =>
       heroes.Search.forEach( movie => this.heroes.push({

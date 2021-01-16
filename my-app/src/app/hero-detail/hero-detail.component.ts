@@ -9,17 +9,20 @@ import { Hero } from '../hero';
 export class HeroDetailComponent implements OnInit {
 
   constructor() {
-  	this.heroes = [];
+  	this.movies = [];
   }
 
   ngOnInit(): void {
   }
+	
+  movies:Hero[];
 
   @Input() hero: Hero;
 
   nominate(movie:Hero) {
-  	this.heroes.push(movie);
+  	this.movies.push(movie);
   }
-  heores:Hero[];
+
+  
 
 }
